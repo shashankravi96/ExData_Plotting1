@@ -6,7 +6,7 @@ power$Time<-hms(power$Time)
 pn<-filter(power, year(Date)==2007 & month(Date)==2 &(day(Date)==1 |day(Date)==2))
 pn_m<-tbl_df(mutate(pn,dt=paste(Date,Time)))
 pn_m$dt<-ymd_hms(pn_m$dt)
-png("plot3.png")
+png("plot3.png") #Default is 480x480
 plot(pn_m$dt,pn_m$Sub_metering_1,type="l",ylab="Energy Sub Metering",xlab="")
 lines(pn_m$dt,pn_m$Sub_metering_2,col="red")
 lines(pn_m$dt,pn_m$Sub_metering_3,col="blue")
