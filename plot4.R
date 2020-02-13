@@ -6,7 +6,7 @@ power$Time<-hms(power$Time)
 pn<-filter(power, year(Date)==2007 & month(Date)==2 &(day(Date)==1 |day(Date)==2))
 pn_m<-tbl_df(mutate(pn,dt=paste(Date,Time)))
 pn_m$dt<-ymd_hms(pn_m$dt)
-png("plot4.png")
+png("plot4.png") #Default is 480x480
 par(mfrow=c(2,2),mar=c(4,4,2,1))
 plot(pn_m$dt,pn_m$Global_active_power,type="l",ylab="Global Active Power",xlab="")
 plot(pn_m$dt,pn_m$Voltage,type="l",ylab="Voltage",xlab="datetime")
